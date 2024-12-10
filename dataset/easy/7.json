@@ -1,0 +1,17 @@
+{
+    "expected_output": {
+        "title": "Example Domain",
+        "num_links": 1,
+        "num_paragraphs": 2
+    },
+    "input": {
+        "input_file": "example.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Extract basic pageview metrics from the provided webpage HTML.",
+    "user_prompt": "Please analyze the webpage HTML content and extract the following metrics into JSON: \n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"title\": \"string\",\n  \"num_links\": \"number\",\n  \"num_paragraphs\": \"number\"\n}",
+    "tags": [
+        "STRUCTURAL_EXTRACTION",
+        "METADATA_EXTRACTION",
+        "ANALYTICS_EXTRACTION"
+    ]
+}

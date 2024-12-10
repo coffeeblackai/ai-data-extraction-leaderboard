@@ -1,0 +1,21 @@
+{
+  "expected_output": {
+    "insights": {
+      "most_popular_page": "/blog/tone-evaluation",
+      "most_popular_referral_source": "twitter.com",
+      "dominant_device_type": "Mobile",
+      "dominant_browser": "iOS Safari",
+      "dominant_country": "United States"
+    }
+  },
+  "input": {
+    "input_file": "analytics.html"
+  },
+  "system_prompt": "You are a data extraction assistant. Extract key analytics insights from the provided webpage HTML and format them according to the specified schema.",
+  "user_prompt": "Please analyze the webpage HTML content and extract the following analytics insights into a JSON object:\n- Most visited page\n- Top referral source\n- Most common device type\n- Most used browser\n- Country with highest traffic\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"most_popular_page\": string,\n    \"most_popular_referral_source\": string,\n    \"dominant_device_type\": string,\n    \"dominant_browser\": string,\n    \"dominant_country\": string\n  }\n}",
+  "tags": [
+    "ANALYTICS_EXTRACTION",
+    "METADATA_EXTRACTION",
+    "STRUCTURAL_EXTRACTION"
+  ]
+}

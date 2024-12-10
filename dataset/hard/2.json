@@ -1,0 +1,71 @@
+{
+    "input": {
+        "input_file": "reddit.html"
+    },    
+    "system_prompt": "You are a data extraction assistant. Extract and organize the complete navigation structure and resource links from the provided Reddit webpage HTML.",
+    "user_prompt": "Please analyze the Reddit webpage HTML and extract the following navigation structure into JSON:\n- Main resource links with their titles and URLs\n- Policy links with their titles and URLs\n- All sidebar resource links\n\nOrganize the information hierarchically\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"resources\": {\n   \"main_links\": [{ \"title\": string, \"url\": string }],\n   \"policies\": [{ \"title\": string, \"url\": string }],\n   \"sidebar_resources\": string[]\n }\n}",
+    "expected_output": {
+      "resources": {
+        "main_links": [
+          {
+            "title": "About Reddit",
+            "url": "https://www.redditinc.com"
+          },
+          {
+            "title": "Advertise",
+            "url": "https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta"
+          },
+          {
+            "title": "Help",
+            "url": "https://support.reddithelp.com/hc?utm_source=reddit&utm_medium=footer&utm_campaign=evergreen"
+          },
+          {
+            "title": "Blog",
+            "url": "https://redditblog.com/"
+          },
+          {
+            "title": "Careers",
+            "url": "https://www.redditinc.com/careers"
+          },
+          {
+            "title": "Press",
+            "url": "https://www.redditinc.com/press"
+          }
+        ],
+        "policies": [
+          {
+            "title": "Content Policy",
+            "url": "https://www.redditinc.com/policies/content-policy"
+          },
+          {
+            "title": "Privacy Policy",
+            "url": "https://www.reddit.com/policies/privacy-policy"
+          },
+          {
+            "title": "User Agreement",
+            "url": "https://www.redditinc.com/policies/user-agreement"
+          }
+        ],
+        "sidebar_resources": [
+          "Amazon Web Services blog",
+          "AWS status page",
+          "AWS documentation",
+          "AWS YouTube channel",
+          "AWS Samples on GitHub",
+          "AWS Labs on GitHub",
+          "AWS General Reference",
+          "High Scalability",
+          "re:Invent Videos",
+          "Workshops",
+          "AWS Geek: Cloud Diagrams",
+          "AWS Stash",
+          "AWS Architecture Center",
+          "AWS re:Post"
+        ]
+      }
+    },
+    "tags": [
+      "STRUCTURAL_EXTRACTION",
+      "METADATA_EXTRACTION"
+    ]
+  }

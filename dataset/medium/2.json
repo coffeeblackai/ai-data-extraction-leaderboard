@@ -1,0 +1,18 @@
+{
+    "expected_output": {
+      "insights": {
+        "mobile_stats": {
+          "percentage": 68,
+          "dominant_browser": "iOS Safari",
+          "browser_share": 48,
+          "alignment_score": 0.71
+        }
+      }
+    },
+    "tags": ["ANALYTICS_EXTRACTION"],
+    "input": {
+      "input_file": "analytics.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Analyze mobile usage patterns from the provided webpage HTML.",
+    "user_prompt": "Please analyze the webpage HTML content and extract mobile usage patterns into JSON:\n- Mobile device usage percentage\n- Most used mobile browser\n- That browser's overall share percentage\n- Calculate an alignment score (browser_share/mobile_percentage)\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"mobile_stats\": {\n      \"percentage\": number,\n      \"dominant_browser\": string,\n      \"browser_share\": number,\n      \"alignment_score\": number\n    }\n  }\n}"
+  }

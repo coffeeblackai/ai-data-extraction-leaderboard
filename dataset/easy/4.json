@@ -1,0 +1,18 @@
+{
+    "input": {
+        "input_file": "reddit.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Extract basic post information from the provided Reddit webpage HTML.",
+    "user_prompt": "Please analyze the Reddit webpage HTML content and extract the following basic post information into a JSON object. \n- Post title\n- Author name\n- Subreddit name\n- Post score\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"post_title\": string,\n \"author\": string,\n \"subreddit\": string,\n \"post_score\": string\n}",
+    "expected_output": {
+      "post_title": "Is there a simple way to monitor Bedrock Costs?",
+      "author": "Bob321423",
+      "subreddit": "r/aws",
+      "post_score": "5"
+    },
+    "tags": [
+      "STRUCTURAL_EXTRACTION",
+      "METADATA_EXTRACTION",
+      "ANALYTICS_EXTRACTION"
+    ]
+}

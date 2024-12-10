@@ -1,0 +1,21 @@
+{
+    "expected_output": {
+      "insights": {
+        "top_page": {
+          "url": "/blog/tone-evaluation",
+          "pageviews": 296,
+          "percentage_of_total": 50.5,
+          "has_social_traffic": true
+        }
+      }
+    },
+    "tags": [
+      "ANALYTICS_EXTRACTION",
+      "SEMANTIC_EXTRACTION"
+    ],
+    "input": {
+      "input_file": "analytics.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Analyze the most popular page's metrics from the provided webpage HTML.",
+    "user_prompt": "Please analyze the webpage HTML content and extract information about the most visited page into JSON:\n- The page URL\n- Number of pageviews\n- Calculate what percentage of total pageviews this represents\n- Whether it received any social media traffic (from Twitter, Facebook, or LinkedIn)\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"top_page\": {\n      \"url\": string,\n      \"pageviews\": number,\n      \"percentage_of_total\": number,\n      \"has_social_traffic\": boolean\n    }\n  }\n}"
+  }

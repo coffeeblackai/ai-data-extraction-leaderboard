@@ -1,0 +1,26 @@
+{
+    "input": {
+        "input_file": "reddit.html"
+    },
+    "tags": ["ANALYTICS_EXTRACTION", "SEMANTIC_EXTRACTION"],
+    "system_prompt": "You are a data extraction assistant. Analyze comment patterns and extract comment-related metrics from the provided Reddit webpage HTML.",
+    "user_prompt": "Please analyze the Reddit webpage HTML and extract the following comment information into JSON:\n- Total number of comments\n- List of all comment authors\n- Timeline of comments (how long ago each was posted)\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"total_comments\": number,\n \"comment_authors\": string[],\n \"comments_timeline\": string[]\n}",
+    "expected_output": {
+      "total_comments": 5,
+      "comment_authors": [
+        "Truelikegiroux",
+        "TechMktr", 
+        "MrPebblesMeow",
+        "AdRepulsive7837",
+        "noydoc"
+      ],
+      "comments_timeline": [
+        "5 months ago",
+        "5 months ago",
+        "4 months ago", 
+        "4 months ago",
+        "2 months ago"
+      ]
+    }
+  }
+  

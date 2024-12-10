@@ -1,0 +1,16 @@
+{
+    "expected_output": {
+      "insights": {
+        "total_pageviews": 584,
+        "total_visitors": 417
+      }
+    },
+    "input": {
+      "input_file": "analytics.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Extract basic pageview metrics from the provided webpage HTML.",
+    "user_prompt": "Please analyze the webpage HTML content and extract the following metrics into a JSON object:\n- Total pageviews\n- Total visitors\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"total_pageviews\": number,\n    \"total_visitors\": number\n  }\n}",
+    "tags": [
+      "ANALYTICS_EXTRACTION"
+    ]
+}

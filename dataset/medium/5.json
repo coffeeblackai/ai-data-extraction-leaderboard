@@ -1,0 +1,23 @@
+{
+    "input": {
+        "input_file": "simpleanalytics.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Extract the main logo SVG content and properties from the provided webpage HTML.",
+    "user_prompt": "Please extract the main navigation logo SVG element, including its viewBox, dimensions, and path data. Don't deconstruct the paths. Store them as strings wtih the tag inside. \n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"logo\": {\n   \"viewBox\": string,\n   \"width\": string,\n   \"height\": string,\n   \"paths\": string[]\n }\n}",
+    "expected_output": {
+      "logo": {
+        "viewBox": "0 0 100 100",
+        "width": "30px",
+        "height": "30px",
+        "paths": [
+          "<rect height=\"30\" width=\"10\" x=\"20\" y=\"53\"></rect>",
+          "<rect height=\"48\" width=\"10\" x=\"44\" y=\"35\"></rect>", 
+          "<rect height=\"65\" width=\"10\" x=\"68\" y=\"18\"></rect>"
+        ]
+      }
+    },
+    "tags": [
+      "STRUCTURAL_EXTRACTION",
+      "MEDIA_EXTRACTION"
+    ]
+}

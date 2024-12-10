@@ -1,0 +1,18 @@
+{
+    "input": {
+        "input_file": "reddit.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Extract community statistics and metadata from the provided Reddit webpage HTML.",
+    "user_prompt": "Please analyze the Reddit webpage HTML and extract the following community information into JSON:\n- Community name\n- Total member count\n- Currently active members\n- Community creation date\n- Community type\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"community_name\": string,\n \"total_members\": string,\n \"active_members\": string,\n \"created_date\": string,\n \"community_type\": string\n}",
+    "expected_output": {
+      "community_name": "aws",
+      "total_members": "316355",
+      "active_members": "48",
+      "created_date": "Jan 26, 2008",
+      "community_type": "Public"
+    },
+    "tags": [
+      "METADATA_EXTRACTION",
+      "ANALYTICS_EXTRACTION"
+    ]
+}

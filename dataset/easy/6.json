@@ -1,0 +1,27 @@
+{
+  "input": {
+    "input_file": "simpleanalytics.html"
+  },
+  "system_prompt": "You are a data extraction assistant. Extract favicon URLs from the provided webpage HTML.",
+  "user_prompt": "Please extract all favicon URLs from the HTML head section. Include any favicon references with different sizes. Format the output as a JSON array of objects with size and URL properties.\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"favicons\": [{\n   \"size\": string,\n   \"url\": string\n }]\n}",
+  "expected_output": {
+    "favicons": [
+      {
+        "size": "180x180",
+        "url": "/apple-touch-icon.png"
+      },
+      {
+        "size": "32x32",
+        "url": "/favicon-32x32.png"
+      },
+      {
+        "size": "16x16",
+        "url": "/favicon-16x16.png"
+      }
+    ]
+  },
+  "tags": [
+    "METADATA_EXTRACTION",
+    "MEDIA_EXTRACTION"
+  ]
+}

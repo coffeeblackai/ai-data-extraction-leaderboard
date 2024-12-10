@@ -1,0 +1,13 @@
+{
+    "input": {
+        "input_file": "simpleanalytics.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Extract and decode any base64 encoded logo images from the provided webpage HTML.",
+    "user_prompt": "Please analyze the HTML for any base64 encoded logo images. Extract the base64 encoded string or return empty string \n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"encodedImage\": string\n}",
+    "expected_output": {
+      "encodedImage": ""
+    },
+    "tags": [
+      "MEDIA_EXTRACTION"
+    ]
+  }

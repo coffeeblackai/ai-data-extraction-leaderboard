@@ -1,0 +1,19 @@
+{
+    "expected_output": {
+      "insights": {
+        "device_usage": {
+          "mobile": 68,
+          "desktop": 32,
+          "tablet": 0.7
+        }
+      }
+    },
+    "input": {
+      "input_file": "analytics.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Extract device usage percentages from the provided webpage HTML.",
+    "user_prompt": "Please analyze the webpage HTML content and extract the percentage breakdown of device types used into JSON.\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"device_usage\": {\n      \"mobile\": number,\n      \"desktop\": number,\n      \"tablet\": number\n    }\n  }\n}",
+    "tags": [
+      "ANALYTICS_EXTRACTION"
+    ]
+  }

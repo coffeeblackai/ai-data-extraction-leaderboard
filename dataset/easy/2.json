@@ -1,0 +1,19 @@
+{
+    "expected_output": {
+      "insights": {
+        "referral_sources": {
+          "direct": 240,
+          "twitter.com": 68,
+          "news.ycombinator.com": 41
+        }
+      }
+    },
+    "input": {
+      "input_file": "analytics.html"
+    },
+    "system_prompt": "You are a data extraction assistant. Extract the top 3 referral sources from the provided webpage HTML.",
+    "user_prompt": "Please analyze the webpage HTML content and extract the top 3 referral sources with their pageview counts into JSON.\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"referral_sources\": {\n      \"direct\": number,\n      \"twitter.com\": number,\n      \"news.ycombinator.com\": number\n    }\n  }\n}",
+    "tags": [
+      "ANALYTICS_EXTRACTION"
+    ]
+  }
