@@ -6,7 +6,7 @@ class ModelConfig:
         "gpt-4o-mini": {
             "context_window": 128000,
             "pricing": {
-                "input": 0.015,
+                "input": 0.15,
                 "output": 0.60
             },
             "rate_limit": {

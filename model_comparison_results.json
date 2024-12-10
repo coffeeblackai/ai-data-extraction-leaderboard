@@ -1,3 +1,858 @@
 [
- 
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "6.json",
+    "difficulty": "easy",
+    "tags": [
+      "METADATA_EXTRACTION",
+      "MEDIA_EXTRACTION"
+    ],
+    "score": 1.0,
+    "cost": 0.00147585,
+    "usage": {
+      "input_tokens": 9507,
+      "output_tokens": 83,
+      "total_tokens": 9590
+    },
+    "latency": 1.8749449253082275,
+    "test_case": {
+      "input": {
+        "input_file": "simpleanalytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract favicon URLs from the provided webpage HTML.",
+      "user_prompt": "Please extract all favicon URLs from the HTML head section. Include any favicon references with different sizes. Format the output as a JSON array of objects with size and URL properties.\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"favicons\": [{\n   \"size\": string,\n   \"url\": string\n }]\n}",
+      "expected_output": {
+        "favicons": [
+          {
+            "size": "180x180",
+            "url": "/apple-touch-icon.png"
+          },
+          {
+            "size": "32x32",
+            "url": "/favicon-32x32.png"
+          },
+          {
+            "size": "16x16",
+            "url": "/favicon-16x16.png"
+          }
+        ]
+      },
+      "tags": [
+        "METADATA_EXTRACTION",
+        "MEDIA_EXTRACTION"
+      ],
+      "difficulty": "easy",
+      "test_id": "6.json"
+    },
+    "model_output": {
+      "favicons": [
+        {
+          "size": "180x180",
+          "url": "/apple-touch-icon.png"
+        },
+        {
+          "size": "32x32",
+          "url": "/favicon-32x32.png"
+        },
+        {
+          "size": "16x16",
+          "url": "/favicon-16x16.png"
+        }
+      ]
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "7.json",
+    "difficulty": "easy",
+    "tags": [
+      "STRUCTURAL_EXTRACTION",
+      "METADATA_EXTRACTION",
+      "ANALYTICS_EXTRACTION"
+    ],
+    "score": 1.0000000715255737,
+    "cost": 4.9949999999999994e-05,
+    "usage": {
+      "input_tokens": 221,
+      "output_tokens": 28,
+      "total_tokens": 249
+    },
+    "latency": 0.609846830368042,
+    "test_case": {
+      "expected_output": {
+        "title": "Example Domain",
+        "num_links": 1,
+        "num_paragraphs": 2
+      },
+      "input": {
+        "input_file": "example.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract basic pageview metrics from the provided webpage HTML.",
+      "user_prompt": "Please analyze the webpage HTML content and extract the following metrics into JSON: \n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"title\": \"string\",\n  \"num_links\": \"number\",\n  \"num_paragraphs\": \"number\"\n}",
+      "tags": [
+        "STRUCTURAL_EXTRACTION",
+        "METADATA_EXTRACTION",
+        "ANALYTICS_EXTRACTION"
+      ],
+      "difficulty": "easy",
+      "test_id": "7.json"
+    },
+    "model_output": {
+      "title": "Example Domain",
+      "num_links": 1,
+      "num_paragraphs": 2
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "1.json",
+    "difficulty": "easy",
+    "tags": [
+      "ANALYTICS_EXTRACTION"
+    ],
+    "score": 0.9999999642372132,
+    "cost": 0.00546645,
+    "usage": {
+      "input_tokens": 36331,
+      "output_tokens": 28,
+      "total_tokens": 36359
+    },
+    "latency": 2.3779821395874023,
+    "test_case": {
+      "expected_output": {
+        "insights": {
+          "total_pageviews": 584,
+          "total_visitors": 417
+        }
+      },
+      "input": {
+        "input_file": "analytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract basic pageview metrics from the provided webpage HTML.",
+      "user_prompt": "Please analyze the webpage HTML content and extract the following metrics into a JSON object:\n- Total pageviews\n- Total visitors\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"total_pageviews\": number,\n    \"total_visitors\": number\n  }\n}",
+      "tags": [
+        "ANALYTICS_EXTRACTION"
+      ],
+      "difficulty": "easy",
+      "test_id": "1.json"
+    },
+    "model_output": {
+      "insights": {
+        "total_pageviews": 584,
+        "total_visitors": 417
+      }
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "2.json",
+    "difficulty": "easy",
+    "tags": [
+      "ANALYTICS_EXTRACTION"
+    ],
+    "score": 1.0,
+    "cost": 0.005479649999999999,
+    "usage": {
+      "input_tokens": 36347,
+      "output_tokens": 46,
+      "total_tokens": 36393
+    },
+    "latency": 2.682868003845215,
+    "test_case": {
+      "expected_output": {
+        "insights": {
+          "referral_sources": {
+            "direct": 240,
+            "twitter.com": 68,
+            "news.ycombinator.com": 41
+          }
+        }
+      },
+      "input": {
+        "input_file": "analytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract the top 3 referral sources from the provided webpage HTML.",
+      "user_prompt": "Please analyze the webpage HTML content and extract the top 3 referral sources with their pageview counts into JSON.\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"referral_sources\": {\n      \"direct\": number,\n      \"twitter.com\": number,\n      \"news.ycombinator.com\": number\n    }\n  }\n}",
+      "tags": [
+        "ANALYTICS_EXTRACTION"
+      ],
+      "difficulty": "easy",
+      "test_id": "2.json"
+    },
+    "model_output": {
+      "insights": {
+        "referral_sources": {
+          "direct": 240,
+          "twitter.com": 68,
+          "news.ycombinator.com": 41
+        }
+      }
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "3.json",
+    "difficulty": "easy",
+    "tags": [
+      "ANALYTICS_EXTRACTION"
+    ],
+    "score": 0.9999999284744263,
+    "cost": 0.005474549999999999,
+    "usage": {
+      "input_tokens": 36333,
+      "output_tokens": 41,
+      "total_tokens": 36374
+    },
+    "latency": 3.4271018505096436,
+    "test_case": {
+      "expected_output": {
+        "insights": {
+          "device_usage": {
+            "mobile": 68,
+            "desktop": 32,
+            "tablet": 0.7
+          }
+        }
+      },
+      "input": {
+        "input_file": "analytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract device usage percentages from the provided webpage HTML.",
+      "user_prompt": "Please analyze the webpage HTML content and extract the percentage breakdown of device types used into JSON.\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"device_usage\": {\n      \"mobile\": number,\n      \"desktop\": number,\n      \"tablet\": number\n    }\n  }\n}",
+      "tags": [
+        "ANALYTICS_EXTRACTION"
+      ],
+      "difficulty": "easy",
+      "test_id": "3.json"
+    },
+    "model_output": {
+      "insights": {
+        "device_usage": {
+          "mobile": 68,
+          "desktop": 32,
+          "tablet": 0.7
+        }
+      }
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "4.json",
+    "difficulty": "easy",
+    "tags": [
+      "STRUCTURAL_EXTRACTION",
+      "METADATA_EXTRACTION",
+      "ANALYTICS_EXTRACTION"
+    ],
+    "score": 0.9764013528823853,
+    "cost": 0.012991199999999998,
+    "usage": {
+      "input_tokens": 86432,
+      "output_tokens": 44,
+      "total_tokens": 86476
+    },
+    "latency": 8.387054920196533,
+    "test_case": {
+      "input": {
+        "input_file": "reddit.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract basic post information from the provided Reddit webpage HTML.",
+      "user_prompt": "Please analyze the Reddit webpage HTML content and extract the following basic post information into a JSON object. \n- Post title\n- Author name\n- Subreddit name\n- Post score\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"post_title\": string,\n \"author\": string,\n \"subreddit\": string,\n \"post_score\": string\n}",
+      "expected_output": {
+        "post_title": "Is there a simple way to monitor Bedrock Costs?",
+        "author": "Bob321423",
+        "subreddit": "r/aws",
+        "post_score": "5"
+      },
+      "tags": [
+        "STRUCTURAL_EXTRACTION",
+        "METADATA_EXTRACTION",
+        "ANALYTICS_EXTRACTION"
+      ],
+      "difficulty": "easy",
+      "test_id": "4.json"
+    },
+    "model_output": {
+      "post_title": "Is there a simple way to monitor Bedrock Costs?",
+      "author": "Bob321423",
+      "subreddit": "aws",
+      "post_score": "5"
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "5.json",
+    "difficulty": "easy",
+    "tags": [
+      "STRUCTURAL_EXTRACTION",
+      "METADATA_EXTRACTION",
+      "ANALYTICS_EXTRACTION"
+    ],
+    "score": 0.9618167161941529,
+    "cost": 0.012994950000000002,
+    "usage": {
+      "input_tokens": 86441,
+      "output_tokens": 48,
+      "total_tokens": 86489
+    },
+    "latency": 9.813721895217896,
+    "test_case": {
+      "input": {
+        "input_file": "reddit.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract community statistics and metadata from the provided Reddit webpage HTML.",
+      "user_prompt": "Please analyze the Reddit webpage HTML and extract the following community information into JSON:\n- Community name\n- Total member count\n- Currently active members\n- Community creation date\n- Community type\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"community_name\": string,\n \"total_members\": number,\n \"active_members\": number,\n \"created_date\": string,\n \"community_type\": string\n}",
+      "expected_output": {
+        "community_name": "r/aws",
+        "total_members": 316355,
+        "active_members": 48,
+        "created_date": "Jan 26, 2008",
+        "community_type": "Public"
+      },
+      "tags": [
+        "STRUCTURAL_EXTRACTION",
+        "METADATA_EXTRACTION",
+        "ANALYTICS_EXTRACTION"
+      ],
+      "difficulty": "easy",
+      "test_id": "5.json"
+    },
+    "model_output": {
+      "community_name": "aws",
+      "total_members": 316355,
+      "active_members": 48,
+      "created_date": "2008-01-26",
+      "community_type": "public"
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "1.json",
+    "difficulty": "medium",
+    "tags": [
+      "ANALYTICS_EXTRACTION",
+      "SEMANTIC_EXTRACTION"
+    ],
+    "score": 0.7967832565307618,
+    "cost": 0.00549105,
+    "usage": {
+      "input_tokens": 36387,
+      "output_tokens": 55,
+      "total_tokens": 36442
+    },
+    "latency": 3.1564760208129883,
+    "test_case": {
+      "expected_output": {
+        "insights": {
+          "top_page": {
+            "url": "/blog/tone-evaluation",
+            "pageviews": 296,
+            "percentage_of_total": 50.5,
+            "has_social_traffic": true
+          }
+        }
+      },
+      "tags": [
+        "ANALYTICS_EXTRACTION",
+        "SEMANTIC_EXTRACTION"
+      ],
+      "input": {
+        "input_file": "analytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Analyze the most popular page's metrics from the provided webpage HTML.",
+      "user_prompt": "Please analyze the webpage HTML content and extract information about the most visited page into JSON:\n- The page URL\n- Number of pageviews\n- Calculate what percentage of total pageviews this represents\n- Whether it received any social media traffic (from Twitter, Facebook, or LinkedIn)\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"top_page\": {\n      \"url\": string,\n      \"pageviews\": number,\n      \"percentage_of_total\": number,\n      \"has_social_traffic\": boolean\n    }\n  }\n}",
+      "difficulty": "medium",
+      "test_id": "1.json"
+    },
+    "model_output": {
+      "insights": {
+        "top_page": {
+          "url": "/peytoncasper.com",
+          "pageviews": 584,
+          "percentage_of_total": 100,
+          "has_social_traffic": true
+        }
+      }
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "2.json",
+    "difficulty": "medium",
+    "tags": [
+      "ANALYTICS_EXTRACTION"
+    ],
+    "score": 0.9776516556739807,
+    "cost": 0.005490899999999999,
+    "usage": {
+      "input_tokens": 36370,
+      "output_tokens": 59,
+      "total_tokens": 36429
+    },
+    "latency": 3.1334660053253174,
+    "test_case": {
+      "expected_output": {
+        "insights": {
+          "mobile_stats": {
+            "percentage": 68,
+            "dominant_browser": "iOS Safari",
+            "browser_share": 48,
+            "alignment_score": 0.71
+          }
+        }
+      },
+      "tags": [
+        "ANALYTICS_EXTRACTION"
+      ],
+      "input": {
+        "input_file": "analytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Analyze mobile usage patterns from the provided webpage HTML.",
+      "user_prompt": "Please analyze the webpage HTML content and extract mobile usage patterns into JSON:\n- Mobile device usage percentage\n- Most used mobile browser\n- That browser's overall share percentage\n- Calculate an alignment score (browser_share/mobile_percentage)\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"mobile_stats\": {\n      \"percentage\": number,\n      \"dominant_browser\": string,\n      \"browser_share\": number,\n      \"alignment_score\": number\n    }\n  }\n}",
+      "difficulty": "medium",
+      "test_id": "2.json"
+    },
+    "model_output": {
+      "insights": {
+        "mobile_stats": {
+          "percentage": 68,
+          "dominant_browser": "iOS Safari",
+          "browser_share": 48,
+          "alignment_score": 0.7058823529411765
+        }
+      }
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "3.json",
+    "difficulty": "medium",
+    "tags": [
+      "ANALYTICS_EXTRACTION",
+      "SEMANTIC_EXTRACTION"
+    ],
+    "score": 0.933711564540863,
+    "cost": 0.0130248,
+    "usage": {
+      "input_tokens": 86436,
+      "output_tokens": 99,
+      "total_tokens": 86535
+    },
+    "latency": 11.325305938720703,
+    "test_case": {
+      "input": {
+        "input_file": "reddit.html"
+      },
+      "tags": [
+        "ANALYTICS_EXTRACTION",
+        "SEMANTIC_EXTRACTION"
+      ],
+      "system_prompt": "You are a data extraction assistant. Analyze comment patterns and extract comment-related metrics from the provided Reddit webpage HTML.",
+      "user_prompt": "Please analyze the Reddit webpage HTML and extract the following comment information into JSON:\n- Total number of comments\n- List of all comment authors\n- Timeline of comments (how long ago each was posted)\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"total_comments\": number,\n \"comment_authors\": string[],\n \"comments_timeline\": string[]\n}",
+      "expected_output": {
+        "total_comments": 5,
+        "comment_authors": [
+          "Truelikegiroux",
+          "TechMktr",
+          "MrPebblesMeow",
+          "AdRepulsive7837",
+          "noydoc"
+        ],
+        "comments_timeline": [
+          "5 months ago",
+          "5 months ago",
+          "4 months ago",
+          "4 months ago",
+          "2 months ago"
+        ]
+      },
+      "difficulty": "medium",
+      "test_id": "3.json"
+    },
+    "model_output": {
+      "total_comments": 5,
+      "comment_authors": [
+        "Truelikegiroux",
+        "TechMktr",
+        "MrPebblesMeow",
+        "AdRepulsive7837",
+        "noydoc"
+      ],
+      "comments_timeline": [
+        "5 mo. ago",
+        "5 mo. ago",
+        "4 mo. ago",
+        "4 mo. ago",
+        "2 mo. ago"
+      ]
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "4.json",
+    "difficulty": "medium",
+    "tags": [
+      "METADATA_EXTRACTION",
+      "ANALYTICS_EXTRACTION"
+    ],
+    "score": 0.9561635494232178,
+    "cost": 0.01300035,
+    "usage": {
+      "input_tokens": 86441,
+      "output_tokens": 57,
+      "total_tokens": 86498
+    },
+    "latency": 10.32919979095459,
+    "test_case": {
+      "input": {
+        "input_file": "reddit.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract community statistics and metadata from the provided Reddit webpage HTML.",
+      "user_prompt": "Please analyze the Reddit webpage HTML and extract the following community information into JSON:\n- Community name\n- Total member count\n- Currently active members\n- Community creation date\n- Community type\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"community_name\": string,\n \"total_members\": string,\n \"active_members\": string,\n \"created_date\": string,\n \"community_type\": string\n}",
+      "expected_output": {
+        "community_name": "aws",
+        "total_members": "316355",
+        "active_members": "48",
+        "created_date": "Jan 26, 2008",
+        "community_type": "Public"
+      },
+      "tags": [
+        "METADATA_EXTRACTION",
+        "ANALYTICS_EXTRACTION"
+      ],
+      "difficulty": "medium",
+      "test_id": "4.json"
+    },
+    "model_output": {
+      "community_name": "aws",
+      "total_members": "316K",
+      "active_members": "48",
+      "created_date": "2008-01-26T01:09:36.945Z",
+      "community_type": "public"
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "5.json",
+    "difficulty": "medium",
+    "tags": [
+      "STRUCTURAL_EXTRACTION",
+      "MEDIA_EXTRACTION"
+    ],
+    "score": 1.0,
+    "cost": 0.00149445,
+    "usage": {
+      "input_tokens": 9527,
+      "output_tokens": 109,
+      "total_tokens": 9636
+    },
+    "latency": 2.352447032928467,
+    "test_case": {
+      "input": {
+        "input_file": "simpleanalytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract the main logo SVG content and properties from the provided webpage HTML.",
+      "user_prompt": "Please extract the main navigation logo SVG element, including its viewBox, dimensions, and path data. Don't deconstruct the paths. Store them as strings wtih the tag inside. \n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"logo\": {\n   \"viewBox\": string,\n   \"width\": string,\n   \"height\": string,\n   \"paths\": string[]\n }\n}",
+      "expected_output": {
+        "logo": {
+          "viewBox": "0 0 100 100",
+          "width": "30px",
+          "height": "30px",
+          "paths": [
+            "<rect height=\"30\" width=\"10\" x=\"20\" y=\"53\"></rect>",
+            "<rect height=\"48\" width=\"10\" x=\"44\" y=\"35\"></rect>",
+            "<rect height=\"65\" width=\"10\" x=\"68\" y=\"18\"></rect>"
+          ]
+        }
+      },
+      "tags": [
+        "STRUCTURAL_EXTRACTION",
+        "MEDIA_EXTRACTION"
+      ],
+      "difficulty": "medium",
+      "test_id": "5.json"
+    },
+    "model_output": {
+      "logo": {
+        "viewBox": "0 0 100 100",
+        "width": "30px",
+        "height": "30px",
+        "paths": [
+          "<rect height=\"30\" width=\"10\" x=\"20\" y=\"53\"></rect>",
+          "<rect height=\"48\" width=\"10\" x=\"44\" y=\"35\"></rect>",
+          "<rect height=\"65\" width=\"10\" x=\"68\" y=\"18\"></rect>"
+        ]
+      }
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "1.json",
+    "difficulty": "hard",
+    "tags": [
+      "ANALYTICS_EXTRACTION",
+      "METADATA_EXTRACTION",
+      "STRUCTURAL_EXTRACTION"
+    ],
+    "score": 0.9323653101921081,
+    "cost": 0.0055011,
+    "usage": {
+      "input_tokens": 36386,
+      "output_tokens": 72,
+      "total_tokens": 36458
+    },
+    "latency": 3.8106818199157715,
+    "test_case": {
+      "expected_output": {
+        "insights": {
+          "most_popular_page": "/blog/tone-evaluation",
+          "most_popular_referral_source": "twitter.com",
+          "dominant_device_type": "Mobile",
+          "dominant_browser": "iOS Safari",
+          "dominant_country": "United States"
+        }
+      },
+      "input": {
+        "input_file": "analytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract key analytics insights from the provided webpage HTML and format them according to the specified schema.",
+      "user_prompt": "Please analyze the webpage HTML content and extract the following analytics insights into a JSON object:\n- Most visited page\n- Top referral source\n- Most common device type\n- Most used browser\n- Country with highest traffic\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n  \"insights\": {\n    \"most_popular_page\": string,\n    \"most_popular_referral_source\": string,\n    \"dominant_device_type\": string,\n    \"dominant_browser\": string,\n    \"dominant_country\": string\n  }\n}",
+      "tags": [
+        "ANALYTICS_EXTRACTION",
+        "METADATA_EXTRACTION",
+        "STRUCTURAL_EXTRACTION"
+      ],
+      "difficulty": "hard",
+      "test_id": "1.json"
+    },
+    "model_output": {
+      "insights": {
+        "most_popular_page": "/peytoncasper.com/blog/tone-evaluation",
+        "most_popular_referral_source": "direct",
+        "dominant_device_type": "Mobile",
+        "dominant_browser": "iOS Safari",
+        "dominant_country": "United States"
+      }
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "2.json",
+    "difficulty": "hard",
+    "tags": [
+      "STRUCTURAL_EXTRACTION",
+      "METADATA_EXTRACTION"
+    ],
+    "score": 0.7400863361358643,
+    "cost": 0.013334100000000002,
+    "usage": {
+      "input_tokens": 86470,
+      "output_tokens": 606,
+      "total_tokens": 87076
+    },
+    "latency": 23.41166877746582,
+    "test_case": {
+      "input": {
+        "input_file": "reddit.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract and organize the complete navigation structure and resource links from the provided Reddit webpage HTML.",
+      "user_prompt": "Please analyze the Reddit webpage HTML and extract the following navigation structure into JSON:\n- Main resource links with their titles and URLs\n- Policy links with their titles and URLs\n- All sidebar resource links\n\nOrganize the information hierarchically\n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"resources\": {\n   \"main_links\": [{ \"title\": string, \"url\": string }],\n   \"policies\": [{ \"title\": string, \"url\": string }],\n   \"sidebar_resources\": string[]\n }\n}",
+      "expected_output": {
+        "resources": {
+          "main_links": [
+            {
+              "title": "About Reddit",
+              "url": "https://www.redditinc.com"
+            },
+            {
+              "title": "Advertise",
+              "url": "https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=left_nav_cta"
+            },
+            {
+              "title": "Help",
+              "url": "https://support.reddithelp.com/hc?utm_source=reddit&utm_medium=footer&utm_campaign=evergreen"
+            },
+            {
+              "title": "Blog",
+              "url": "https://redditblog.com/"
+            },
+            {
+              "title": "Careers",
+              "url": "https://www.redditinc.com/careers"
+            },
+            {
+              "title": "Press",
+              "url": "https://www.redditinc.com/press"
+            }
+          ],
+          "policies": [
+            {
+              "title": "Content Policy",
+              "url": "https://www.redditinc.com/policies/content-policy"
+            },
+            {
+              "title": "Privacy Policy",
+              "url": "https://www.reddit.com/policies/privacy-policy"
+            },
+            {
+              "title": "User Agreement",
+              "url": "https://www.redditinc.com/policies/user-agreement"
+            }
+          ],
+          "sidebar_resources": [
+            "Amazon Web Services blog",
+            "AWS status page",
+            "AWS documentation",
+            "AWS YouTube channel",
+            "AWS Samples on GitHub",
+            "AWS Labs on GitHub",
+            "AWS General Reference",
+            "High Scalability",
+            "re:Invent Videos",
+            "Workshops",
+            "AWS Geek: Cloud Diagrams",
+            "AWS Stash",
+            "AWS Architecture Center",
+            "AWS re:Post"
+          ]
+        }
+      },
+      "tags": [
+        "STRUCTURAL_EXTRACTION",
+        "METADATA_EXTRACTION"
+      ],
+      "difficulty": "hard",
+      "test_id": "2.json"
+    },
+    "model_output": {
+      "resources": {
+        "main_links": [
+          {
+            "title": "Home",
+            "url": "/"
+          },
+          {
+            "title": "Amazon Web Services blog",
+            "url": "https://aws.amazon.com/blogs/aws/"
+          },
+          {
+            "title": "AWS status page",
+            "url": "http://status.aws.amazon.com/"
+          },
+          {
+            "title": "AWS documentation",
+            "url": "http://aws.amazon.com/documentation/"
+          },
+          {
+            "title": "AWS YouTube channel",
+            "url": "https://www.youtube.com/user/AmazonWebServices/"
+          },
+          {
+            "title": "AWS Samples on GitHub",
+            "url": "https://github.com/aws-samples"
+          },
+          {
+            "title": "AWS Labs on GitHub",
+            "url": "https://github.com/awslabs"
+          },
+          {
+            "title": "AWS General Reference",
+            "url": "https://docs.aws.amazon.com/general/latest/gr/Welcome.html"
+          },
+          {
+            "title": "High Scalability",
+            "url": "http://www.highscalability.com/"
+          },
+          {
+            "title": "re:Invent Videos",
+            "url": "https://reinventvideos.com/"
+          },
+          {
+            "title": "Workshops",
+            "url": "https://workshops.aws/"
+          },
+          {
+            "title": "AWS Geek: Cloud Diagrams",
+            "url": "https://www.awsgeek.com/"
+          },
+          {
+            "title": "AWS Stash",
+            "url": "https://awsstash.com/"
+          },
+          {
+            "title": "AWS Architecture Center",
+            "url": "https://aws.amazon.com/architecture/"
+          },
+          {
+            "title": "AWS re:Post",
+            "url": "https://repost.aws/"
+          }
+        ],
+        "policies": [
+          {
+            "title": "Content Policy",
+            "url": "https://www.redditinc.com/policies/content-policy"
+          },
+          {
+            "title": "Privacy Policy",
+            "url": "https://www.reddit.com/policies/privacy-policy"
+          },
+          {
+            "title": "User Agreement",
+            "url": "https://www.redditinc.com/policies/user-agreement"
+          }
+        ],
+        "sidebar_resources": [
+          "Amazon Web Services blog",
+          "AWS status page",
+          "AWS documentation",
+          "AWS YouTube channel",
+          "AWS Samples on GitHub",
+          "AWS Labs on GitHub",
+          "AWS General Reference",
+          "High Scalability",
+          "re:Invent Videos",
+          "Workshops",
+          "AWS Geek: Cloud Diagrams",
+          "AWS Stash",
+          "AWS Architecture Center",
+          "AWS re:Post"
+        ]
+      }
+    }
+  },
+  {
+    "model": "gpt-4o-mini",
+    "test_id": "3.json",
+    "difficulty": "hard",
+    "tags": [
+      "MEDIA_EXTRACTION"
+    ],
+    "score": 1.0,
+    "cost": 0.0014283,
+    "usage": {
+      "input_tokens": 9490,
+      "output_tokens": 8,
+      "total_tokens": 9498
+    },
+    "latency": 3.2642199993133545,
+    "test_case": {
+      "input": {
+        "input_file": "simpleanalytics.html"
+      },
+      "system_prompt": "You are a data extraction assistant. Extract and decode any base64 encoded logo images from the provided webpage HTML.",
+      "user_prompt": "Please analyze the HTML for any base64 encoded logo images. Extract the base64 encoded string or return empty string \n\nReturn only the JSON object, with no additional text, formatted according to this schema:\n{\n \"encodedImage\": string\n}",
+      "expected_output": {
+        "encodedImage": ""
+      },
+      "tags": [
+        "MEDIA_EXTRACTION"
+      ],
+      "difficulty": "hard",
+      "test_id": "3.json"
+    },
+    "model_output": {
+      "encodedImage": ""
+    }
+  }
 ]

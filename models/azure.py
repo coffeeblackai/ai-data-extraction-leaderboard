@@ -33,6 +33,7 @@ class AzureModel(BaseModel):
                 max_tokens=1000,
                 response_format={"type": "json_object"}
             )
+            print(response)
             
             response_text = response.choices[0].message.content
             
