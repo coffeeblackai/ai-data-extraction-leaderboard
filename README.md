@@ -1,6 +1,17 @@
-# Web Extraction Testing Framework
+# AI Data Extraction Leaderboard
 
-A framework for testing and evaluating different LLM models' capabilities in extracting structured data from web pages.
+![AI Data Extraction Leaderboard](assets/header.png)
+
+[View Full Leaderboard →](https://coffeeblack.ai/extractor-leaderboard/index.html)
+
+The AI Data Extraction Leaderboard evaluates how well different AI models handle real-world data extraction tasks commonly encountered by AI agents. Through rigorous testing and analysis, we benchmark leading AI models across key performance metrics:
+
+- Extraction accuracy and reliability
+- Response latency and throughput 
+- Cost efficiency and token usage
+- Handling of complex data structures
+- Robustness across different data formats
+
 
 ## Overview
 
