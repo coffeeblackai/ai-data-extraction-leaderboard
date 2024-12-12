@@ -1,6 +1,6 @@
 [
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "6.json",
     "difficulty": "easy",
     "tags": [
@@ -8,13 +8,13 @@
       "MEDIA_EXTRACTION"
     ],
     "score": 1.0,
-    "cost": 0.00147585,
+    "cost": 0.00048326249999999994,
     "usage": {
-      "input_tokens": 9507,
-      "output_tokens": 83,
-      "total_tokens": 9590
+      "input_tokens": 12431,
+      "output_tokens": 114,
+      "total_tokens": 12545
     },
-    "latency": 1.8749449253082275,
+    "latency": 1.6996879577636719,
     "test_case": {
       "input": {
         "input_file": "simpleanalytics.html"
@@ -62,7 +62,7 @@
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "7.json",
     "difficulty": "easy",
     "tags": [
@@ -71,13 +71,13 @@
       "ANALYTICS_EXTRACTION"
     ],
     "score": 1.0000000715255737,
-    "cost": 4.9949999999999994e-05,
+    "cost": 1.39125e-05,
     "usage": {
-      "input_tokens": 221,
-      "output_tokens": 28,
-      "total_tokens": 249
+      "input_tokens": 243,
+      "output_tokens": 32,
+      "total_tokens": 275
     },
-    "latency": 0.609846830368042,
+    "latency": 0.6650991439819336,
     "test_case": {
       "expected_output": {
         "title": "Example Domain",
@@ -99,25 +99,25 @@
     },
     "model_output": {
       "title": "Example Domain",
-      "num_links": 1,
-      "num_paragraphs": 2
+      "num_links": "1",
+      "num_paragraphs": "2"
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "1.json",
     "difficulty": "easy",
     "tags": [
       "ANALYTICS_EXTRACTION"
     ],
     "score": 0.9999999642372132,
-    "cost": 0.00546645,
+    "cost": 0.0017619,
     "usage": {
-      "input_tokens": 36331,
-      "output_tokens": 28,
-      "total_tokens": 36359
+      "input_tokens": 46840,
+      "output_tokens": 36,
+      "total_tokens": 46876
     },
-    "latency": 2.3779821395874023,
+    "latency": 4.7239179611206055,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -144,20 +144,20 @@
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "2.json",
     "difficulty": "easy",
     "tags": [
       "ANALYTICS_EXTRACTION"
     ],
     "score": 1.0,
-    "cost": 0.005479649999999999,
+    "cost": 0.0017659499999999999,
     "usage": {
-      "input_tokens": 36347,
-      "output_tokens": 46,
-      "total_tokens": 36393
+      "input_tokens": 46860,
+      "output_tokens": 58,
+      "total_tokens": 46918
     },
-    "latency": 2.682868003845215,
+    "latency": 2.96891713142395,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -190,20 +190,20 @@
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "3.json",
     "difficulty": "easy",
     "tags": [
       "ANALYTICS_EXTRACTION"
     ],
     "score": 0.9999999284744263,
-    "cost": 0.005474549999999999,
+    "cost": 0.0017641874999999997,
     "usage": {
-      "input_tokens": 36333,
-      "output_tokens": 41,
-      "total_tokens": 36374
+      "input_tokens": 46845,
+      "output_tokens": 50,
+      "total_tokens": 46895
     },
-    "latency": 3.4271018505096436,
+    "latency": 3.035205841064453,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -236,7 +236,7 @@
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "4.json",
     "difficulty": "easy",
     "tags": [
@@ -245,13 +245,13 @@
       "ANALYTICS_EXTRACTION"
     ],
     "score": 0.9764013528823853,
-    "cost": 0.012991199999999998,
+    "cost": 0.0039925874999999994,
     "usage": {
-      "input_tokens": 86432,
-      "output_tokens": 44,
-      "total_tokens": 86476
+      "input_tokens": 106273,
+      "output_tokens": 49,
+      "total_tokens": 106322
     },
-    "latency": 8.387054920196533,
+    "latency": 13.328509092330933,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -280,7 +280,7 @@
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "5.json",
     "difficulty": "easy",
     "tags": [
@@ -288,14 +288,14 @@
       "METADATA_EXTRACTION",
       "ANALYTICS_EXTRACTION"
     ],
-    "score": 0.9618167161941529,
-    "cost": 0.012994950000000002,
+    "score": 0.9849911093711853,
+    "cost": 0.0039952125,
     "usage": {
-      "input_tokens": 86441,
-      "output_tokens": 48,
-      "total_tokens": 86489
+      "input_tokens": 106287,
+      "output_tokens": 63,
+      "total_tokens": 106350
     },
-    "latency": 9.813721895217896,
+    "latency": 7.555216073989868,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -321,26 +321,26 @@
       "community_name": "aws",
       "total_members": 316355,
       "active_members": 48,
-      "created_date": "2008-01-26",
+      "created_date": "Jan 26, 2008",
       "community_type": "public"
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "1.json",
     "difficulty": "medium",
     "tags": [
       "ANALYTICS_EXTRACTION",
       "SEMANTIC_EXTRACTION"
     ],
-    "score": 0.7967832565307618,
-    "cost": 0.00549105,
+    "score": 0.9820192575454711,
+    "cost": 0.0017697,
     "usage": {
-      "input_tokens": 36387,
-      "output_tokens": 55,
-      "total_tokens": 36442
+      "input_tokens": 46904,
+      "output_tokens": 72,
+      "total_tokens": 46976
     },
-    "latency": 3.1564760208129883,
+    "latency": 8.980632066726685,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -367,29 +367,29 @@
     "model_output": {
       "insights": {
         "top_page": {
-          "url": "/peytoncasper.com",
-          "pageviews": 584,
-          "percentage_of_total": 100,
+          "url": "/blog/tone-evaluation",
+          "pageviews": 296,
+          "percentage_of_total": 50.68,
           "has_social_traffic": true
         }
       }
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "2.json",
     "difficulty": "medium",
     "tags": [
       "ANALYTICS_EXTRACTION"
     ],
-    "score": 0.9776516556739807,
-    "cost": 0.005490899999999999,
+    "score": 0.9762436032295227,
+    "cost": 0.001770375,
     "usage": {
-      "input_tokens": 36370,
-      "output_tokens": 59,
-      "total_tokens": 36429
+      "input_tokens": 46890,
+      "output_tokens": 80,
+      "total_tokens": 46970
     },
-    "latency": 3.1334660053253174,
+    "latency": 3.251124858856201,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -418,27 +418,27 @@
           "percentage": 68,
           "dominant_browser": "iOS Safari",
           "browser_share": 48,
-          "alignment_score": 0.7058823529411765
+          "alignment_score": 0.7058823529411764
         }
       }
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "3.json",
     "difficulty": "medium",
     "tags": [
       "ANALYTICS_EXTRACTION",
       "SEMANTIC_EXTRACTION"
     ],
-    "score": 0.933711564540863,
-    "cost": 0.0130248,
+    "score": 0.9311822414398193,
+    "cost": 0.0040015125,
     "usage": {
-      "input_tokens": 86436,
-      "output_tokens": 99,
-      "total_tokens": 86535
+      "input_tokens": 106279,
+      "output_tokens": 107,
+      "total_tokens": 106386
     },
-    "latency": 11.325305938720703,
+    "latency": 11.486633062362671,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -479,30 +479,30 @@
         "noydoc"
       ],
       "comments_timeline": [
-        "5 mo. ago",
-        "5 mo. ago",
-        "4 mo. ago",
-        "4 mo. ago",
-        "2 mo. ago"
+        "5mo ago",
+        "5mo ago",
+        "4mo ago",
+        "4mo ago",
+        "2mo ago"
       ]
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "4.json",
     "difficulty": "medium",
     "tags": [
       "METADATA_EXTRACTION",
       "ANALYTICS_EXTRACTION"
     ],
-    "score": 0.9561635494232178,
-    "cost": 0.01300035,
+    "score": 0.983130407333374,
+    "cost": 0.0039949125,
     "usage": {
-      "input_tokens": 86441,
-      "output_tokens": 57,
-      "total_tokens": 86498
+      "input_tokens": 106287,
+      "output_tokens": 61,
+      "total_tokens": 106348
     },
-    "latency": 10.32919979095459,
+    "latency": 7.651278018951416,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -527,12 +527,12 @@
       "community_name": "aws",
       "total_members": "316K",
       "active_members": "48",
-      "created_date": "2008-01-26T01:09:36.945Z",
+      "created_date": "Jan 26, 2008",
       "community_type": "public"
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "5.json",
     "difficulty": "medium",
     "tags": [
@@ -540,13 +540,13 @@
       "MEDIA_EXTRACTION"
     ],
     "score": 1.0,
-    "cost": 0.00149445,
+    "cost": 0.0004874999999999999,
     "usage": {
-      "input_tokens": 9527,
-      "output_tokens": 109,
-      "total_tokens": 9636
+      "input_tokens": 12452,
+      "output_tokens": 137,
+      "total_tokens": 12589
     },
-    "latency": 2.352447032928467,
+    "latency": 1.7149040699005127,
     "test_case": {
       "input": {
         "input_file": "simpleanalytics.html"
@@ -586,7 +586,7 @@
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "1.json",
     "difficulty": "hard",
     "tags": [
@@ -594,14 +594,14 @@
       "METADATA_EXTRACTION",
       "STRUCTURAL_EXTRACTION"
     ],
-    "score": 0.9323653101921081,
-    "cost": 0.0055011,
+    "score": 0.9391164660453797,
+    "cost": 0.0017701499999999998,
     "usage": {
-      "input_tokens": 36386,
-      "output_tokens": 72,
-      "total_tokens": 36458
+      "input_tokens": 46900,
+      "output_tokens": 76,
+      "total_tokens": 46976
     },
-    "latency": 3.8106818199157715,
+    "latency": 5.4787678718566895,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -627,8 +627,8 @@
     },
     "model_output": {
       "insights": {
-        "most_popular_page": "/peytoncasper.com/blog/tone-evaluation",
-        "most_popular_referral_source": "direct",
+        "most_popular_page": "/blog/tone-evaluation",
+        "most_popular_referral_source": "(direct)",
         "dominant_device_type": "Mobile",
         "dominant_browser": "iOS Safari",
         "dominant_country": "United States"
@@ -636,21 +636,21 @@
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "2.json",
     "difficulty": "hard",
     "tags": [
       "STRUCTURAL_EXTRACTION",
       "METADATA_EXTRACTION"
     ],
-    "score": 0.7400863361358643,
-    "cost": 0.013334100000000002,
+    "score": 0.8477411815098354,
+    "cost": 0.0040906125,
     "usage": {
-      "input_tokens": 86470,
-      "output_tokens": 606,
-      "total_tokens": 87076
+      "input_tokens": 106311,
+      "output_tokens": 693,
+      "total_tokens": 107004
     },
-    "latency": 23.41166877746582,
+    "latency": 13.459510087966919,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -732,60 +732,36 @@
             "url": "/"
           },
           {
-            "title": "Amazon Web Services blog",
-            "url": "https://aws.amazon.com/blogs/aws/"
+            "title": "Advertise on Reddit",
+            "url": "https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=nav_cta"
           },
           {
-            "title": "AWS status page",
-            "url": "http://status.aws.amazon.com/"
+            "title": "Create post",
+            "url": "/r/aws/submit"
           },
           {
-            "title": "AWS documentation",
-            "url": "http://aws.amazon.com/documentation/"
+            "title": "View Profile",
+            "url": "/user/peytoncasper/"
           },
           {
-            "title": "AWS YouTube channel",
-            "url": "https://www.youtube.com/user/AmazonWebServices/"
+            "title": "Edit Avatar",
+            "url": "https://reddit.com/avatar"
           },
           {
-            "title": "AWS Samples on GitHub",
-            "url": "https://github.com/aws-samples"
+            "title": "Achievements",
+            "url": "/user/peytoncasper/achievements"
           },
           {
-            "title": "AWS Labs on GitHub",
-            "url": "https://github.com/awslabs"
+            "title": "Contributor Program",
+            "url": "/contributor-program/profile"
           },
           {
-            "title": "AWS General Reference",
-            "url": "https://docs.aws.amazon.com/general/latest/gr/Welcome.html"
+            "title": "Settings",
+            "url": "/settings/"
           },
           {
-            "title": "High Scalability",
-            "url": "http://www.highscalability.com/"
-          },
-          {
-            "title": "re:Invent Videos",
-            "url": "https://reinventvideos.com/"
-          },
-          {
-            "title": "Workshops",
-            "url": "https://workshops.aws/"
-          },
-          {
-            "title": "AWS Geek: Cloud Diagrams",
-            "url": "https://www.awsgeek.com/"
-          },
-          {
-            "title": "AWS Stash",
-            "url": "https://awsstash.com/"
-          },
-          {
-            "title": "AWS Architecture Center",
-            "url": "https://aws.amazon.com/architecture/"
-          },
-          {
-            "title": "AWS re:Post",
-            "url": "https://repost.aws/"
+            "title": "Premium",
+            "url": "/premium"
           }
         ],
         "policies": [
@@ -803,39 +779,52 @@
           }
         ],
         "sidebar_resources": [
-          "Amazon Web Services blog",
-          "AWS status page",
-          "AWS documentation",
-          "AWS YouTube channel",
-          "AWS Samples on GitHub",
-          "AWS Labs on GitHub",
-          "AWS General Reference",
-          "High Scalability",
-          "re:Invent Videos",
-          "Workshops",
-          "AWS Geek: Cloud Diagrams",
-          "AWS Stash",
-          "AWS Architecture Center",
-          "AWS re:Post"
+          "https://aws.amazon.com/blogs/aws/",
+          "http://status.aws.amazon.com/",
+          "http://aws.amazon.com/documentation/",
+          "https://www.youtube.com/user/AmazonWebServices/",
+          "https://github.com/aws-samples",
+          "https://github.com/awslabs",
+          "https://docs.aws.amazon.com/general/latest/gr/Welcome.html",
+          "http://www.highscalability.com/",
+          "https://reinventvideos.com/",
+          "https://workshops.aws/",
+          "https://www.awsgeek.com/",
+          "https://awsstash.com/",
+          "https://aws.amazon.com/architecture/",
+          "https://repost.aws/",
+          "/r/AWScertifications",
+          "/r/virtualization",
+          "/r/devops",
+          "/r/kubernetes",
+          "/r/terraform",
+          "/r/cloudcomputing",
+          "/r/bigdata",
+          "/r/vmware",
+          "/r/networking",
+          "/r/sysadmin",
+          "/r/netsec",
+          "/r/aws_cdk",
+          "/r/AWSCloudFormation"
         ]
       }
     }
   },
   {
-    "model": "gpt-4o-mini",
+    "model": "gemini-2.0-flash-exp",
     "test_id": "3.json",
     "difficulty": "hard",
     "tags": [
       "MEDIA_EXTRACTION"
     ],
     "score": 1.0,
-    "cost": 0.0014283,
+    "cost": 0.00046676249999999997,
     "usage": {
-      "input_tokens": 9490,
-      "output_tokens": 8,
-      "total_tokens": 9498
+      "input_tokens": 12411,
+      "output_tokens": 9,
+      "total_tokens": 12420
     },
-    "latency": 3.2642199993133545,
+    "latency": 0.795543909072876,
     "test_case": {
       "input": {
         "input_file": "simpleanalytics.html"

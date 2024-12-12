@@ -22,7 +22,7 @@ class ModelResponse:
     error: Optional[str] = None
     latency: Optional[float] = None
 
-def with_retry_and_rate_limit(max_retries=3, timeout=120):
+def with_retry_and_rate_limit(max_retries=3, timeout=30):
     """Decorator to add timeout, retry logic, and rate limiting to model execution"""
     def decorator(func):
         @wraps(func)
@@ -35,8 +35,9 @@ def with_retry_and_rate_limit(max_retries=3, timeout=120):
             elapsed_time_since_last_request = current_time - self.last_request_time
 
             if elapsed_time_since_last_request >= 60:
-                logger.info(f"Resetting rate limit counters. Previous tokens used: {self.tokens_used_in_current_minute}")
+                logger.info(f"Resetting rate limit counters. Previous tokens used: {self.tokens_used_in_current_minute}, requests made: {self.requests_made_in_current_minute}")
                 self.tokens_used_in_current_minute = 0
+                self.requests_made_in_current_minute = 0
                 self.last_request_time = current_time
 
             # Get token count estimate for initial rate limit check
@@ -47,8 +48,9 @@ def with_retry_and_rate_limit(max_retries=3, timeout=120):
 
             # Check rate limits
             if hasattr(self, 'rate_limit_config'):
-                tokens_per_minute = self.rate_limit_config["tokens_per_minute"]
-                logger.info(f"Rate limit check - Current usage: {self.tokens_used_in_current_minute}/{tokens_per_minute} tokens/minute")
+                tokens_per_minute = self.rate_limit_config.get("tokens_per_minute", float('inf'))
+                requests_per_minute = self.rate_limit_config.get("requests_per_minute", float('inf'))
+                logger.info(f"Rate limit check - Current usage: {self.tokens_used_in_current_minute}/{tokens_per_minute} tokens/minute, {self.requests_made_in_current_minute}/{requests_per_minute} requests/minute")
                 
                 if estimated_tokens > tokens_per_minute:
                     logger.warning(f"Request size ({estimated_tokens} tokens) exceeds rate limit ({tokens_per_minute} tokens/minute)")
@@ -58,11 +60,13 @@ def with_retry_and_rate_limit(max_retries=3, timeout=120):
                         error="Request size exceeds rate limit. Test skipped."
                     )
                 
-                if self.tokens_used_in_current_minute + estimated_tokens > tokens_per_minute:
+                if (self.tokens_used_in_current_minute + estimated_tokens > tokens_per_minute or
+                    self.requests_made_in_current_minute + 1 > requests_per_minute):
                     wait_time = 60 - elapsed_time_since_last_request
-                    logger.info(f"Rate limit approaching. Waiting {wait_time:.1f}s. Current usage: {self.tokens_used_in_current_minute}/{tokens_per_minute}")
+                    logger.info(f"Rate limit approaching. Waiting {wait_time:.1f}s. Current usage: {self.tokens_used_in_current_minute}/{tokens_per_minute} tokens, {self.requests_made_in_current_minute}/{requests_per_minute} requests")
                     time.sleep(wait_time)
                     self.tokens_used_in_current_minute = 0
+                    self.requests_made_in_current_minute = 0
                     self.last_request_time = time.time()
 
             # Retry logic
@@ -72,11 +76,12 @@ def with_retry_and_rate_limit(max_retries=3, timeout=120):
                     with ThreadPoolExecutor(max_workers=1) as executor:
                         future = executor.submit(func, self, *args, **kwargs)
                         result = future.result(timeout=timeout)
-                        # Update token usage with actual values from response
+                        # Update token and request usage with actual values from response
                         if hasattr(self, 'rate_limit_config') and hasattr(result, 'usage'):
                             actual_tokens = result.usage.get('total_tokens', 0)
                             self.tokens_used_in_current_minute += actual_tokens
-                            logger.debug(f"Updated token usage with actual tokens: {self.tokens_used_in_current_minute}/{tokens_per_minute}")
+                            self.requests_made_in_current_minute += 1
+                            logger.debug(f"Updated token and request usage: {self.tokens_used_in_current_minute}/{tokens_per_minute} tokens, {self.requests_made_in_current_minute}/{requests_per_minute} requests")
                         
                         logger.info(f"Request successful on attempt {attempt + 1}")
                         # Ensure we return a proper ModelResponse
@@ -102,6 +107,7 @@ def with_retry_and_rate_limit(max_retries=3, timeout=120):
                         wait_time = 60
                         logger.warning("Rate limit error detected. Resetting counters and waiting 60s")
                         self.tokens_used_in_current_minute = 0
+                        self.requests_made_in_current_minute = 0
                         self.last_request_time = time.time()
                     else:
                         wait_time = 2 ** attempt
@@ -128,6 +134,7 @@ class BaseModel:
         # Initialize rate limiting attributes
         self.last_request_time = 0
         self.tokens_used_in_current_minute = 0
+        self.requests_made_in_current_minute = 0
         # Rate limit config will be set by child classes if they have one
         self.rate_limit_config = None
         self.model_name = model_name

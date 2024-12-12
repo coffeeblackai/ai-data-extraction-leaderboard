@@ -20,14 +20,16 @@ class GoogleModel(BaseModel):
             # Create a chat object and combine system and user prompts
             # Combine system prompt and user prompt
             combined_prompt = f"{system_prompt}\n\n{formatted_prompt}"
-            
-            response = self.model.generate_content(
+
+            chat_session = self.model.start_chat(history=[])
+            response = chat_session.send_message(
                 combined_prompt,
                 generation_config=genai.GenerationConfig(
                     response_mime_type="application/json",
                     temperature=0.5,
                     top_p=0.9,
                     top_k=20,
+                    max_output_tokens=8192
                 )
             )
             # Try to parse JSON response

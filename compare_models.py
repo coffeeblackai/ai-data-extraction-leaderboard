@@ -238,6 +238,7 @@ class TestEvaluator:
     def evaluate_model(self, model_name: str, model, test_case: Dict[str, Any]) -> Dict[str, Any]:
         """Evaluate a single model on a single test case"""
         try:
+            print("File: ", test_case['input']['input_file'])
             html_content = self._load_input_file(test_case['input']['input_file'])
             system_prompt = test_case['system_prompt']
             user_prompt = test_case['user_prompt']
@@ -390,6 +391,7 @@ def compare_models(test_suite: str = 'all', model: str = 'all', output_mode: str
         'claude-3-5-haiku-20241022': AnthropicModel,
         'gemini-1.5-flash-002': GoogleModel,
         'gemini-1.5-pro': GoogleModel,
+        "gemini-2.0-flash-exp": GoogleModel,
         'amazon.nova-micro-v1:0': AwsModel,
         'amazon.nova-lite-v1:0': AwsModel,
         'amazon.nova-pro-v1:0': AwsModel,

@@ -53,21 +53,33 @@ class ModelConfig:
         
         
         # Google models
-        "gemini-1.5-pro": {
-            "context_window": 128000,
-            "pricing": {
-                "input": 1.25,
-                "output": 5.0,
-                "cache": 0.3125
-            },
-            "rate_limit": {
-                "tokens_per_minute": 128000,
-                "requests_per_minute": 60
-            },
-            "family": "gemini"
-        },
+        # "gemini-1.5-pro": {
+        #     "context_window": 128000,
+        #     "pricing": {
+        #         "input": 1.25,
+        #         "output": 5.0,
+        #         "cache": 0.3125
+        #     },
+        #     "rate_limit": {
+        #         "tokens_per_minute": 128000,
+        #         "requests_per_minute": 60
+        #     },
+        #     "family": "gemini"
+        # },
         
-        "gemini-1.5-flash-002": {
+        # "gemini-1.5-flash-002": {
+        #     "context_window": 1000000,
+        #     "pricing": {
+        #         "input": 0.0375,
+        #         "output": 0.15
+        #     },
+        #     "rate_limit": {
+        #         "tokens_per_minute": 100000,
+        #         "requests_per_minute": 60
+        #     },
+        #     "family": "gemini"
+        # },
+        "gemini-2.0-flash-exp": {
             "context_window": 1000000,
             "pricing": {
                 "input": 0.0375,
@@ -75,10 +87,11 @@ class ModelConfig:
             },
             "rate_limit": {
                 "tokens_per_minute": 100000,
-                "requests_per_minute": 60
+                "requests_per_minute": 15
             },
             "family": "gemini"
         },
+        
         
         # Amazon Bedrock models
         "amazon.nova-micro-v1:0": {
