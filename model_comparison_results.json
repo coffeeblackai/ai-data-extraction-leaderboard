@@ -1,6 +1,6 @@
 [
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "6.json",
     "difficulty": "easy",
     "tags": [
@@ -8,13 +8,13 @@
       "MEDIA_EXTRACTION"
     ],
     "score": 1.0,
-    "cost": 0.00048326249999999994,
+    "cost": 0.000480525,
     "usage": {
-      "input_tokens": 12431,
-      "output_tokens": 114,
-      "total_tokens": 12545
+      "input_tokens": 12410.0,
+      "output_tokens": 101.0,
+      "total_tokens": 12511.0
     },
-    "latency": 1.6996879577636719,
+    "latency": 2.887265920639038,
     "test_case": {
       "input": {
         "input_file": "simpleanalytics.html"
@@ -62,7 +62,7 @@
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "7.json",
     "difficulty": "easy",
     "tags": [
@@ -71,13 +71,13 @@
       "ANALYTICS_EXTRACTION"
     ],
     "score": 1.0000000715255737,
-    "cost": 1.39125e-05,
+    "cost": 1.365e-05,
     "usage": {
-      "input_tokens": 243,
-      "output_tokens": 32,
-      "total_tokens": 275
+      "input_tokens": 248.0,
+      "output_tokens": 29.0,
+      "total_tokens": 277.0
     },
-    "latency": 0.6650991439819336,
+    "latency": 0.4588148593902588,
     "test_case": {
       "expected_output": {
         "title": "Example Domain",
@@ -99,25 +99,25 @@
     },
     "model_output": {
       "title": "Example Domain",
-      "num_links": "1",
-      "num_paragraphs": "2"
+      "num_links": 1,
+      "num_paragraphs": 2
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "1.json",
     "difficulty": "easy",
     "tags": [
       "ANALYTICS_EXTRACTION"
     ],
     "score": 0.9999999642372132,
-    "cost": 0.0017619,
+    "cost": 0.0017636625000000002,
     "usage": {
-      "input_tokens": 46840,
-      "output_tokens": 36,
-      "total_tokens": 46876
+      "input_tokens": 46899.0,
+      "output_tokens": 33.0,
+      "total_tokens": 46932.0
     },
-    "latency": 4.7239179611206055,
+    "latency": 4.9323320388793945,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -144,20 +144,20 @@
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "2.json",
     "difficulty": "easy",
     "tags": [
       "ANALYTICS_EXTRACTION"
     ],
-    "score": 1.0,
-    "cost": 0.0017659499999999999,
+    "score": 0.06706220805644988,
+    "cost": 0.0017677124999999998,
     "usage": {
-      "input_tokens": 46860,
-      "output_tokens": 58,
-      "total_tokens": 46918
+      "input_tokens": 46915.0,
+      "output_tokens": 56.0,
+      "total_tokens": 46971.0
     },
-    "latency": 2.96891713142395,
+    "latency": 7.224763870239258,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -180,30 +180,24 @@
       "test_id": "2.json"
     },
     "model_output": {
-      "insights": {
-        "referral_sources": {
-          "direct": 240,
-          "twitter.com": 68,
-          "news.ycombinator.com": 41
-        }
-      }
+      "text": "```json\n{\n  \"insights\": {\n    \"referral_sources\": {\n      \"direct\": 240,\n      \"twitter.com\": 68,\n      \"news.ycombinator.com\": 41\n    }\n  }\n}\n```"
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "3.json",
     "difficulty": "easy",
     "tags": [
       "ANALYTICS_EXTRACTION"
     ],
-    "score": 0.9999999284744263,
-    "cost": 0.0017641874999999997,
+    "score": 0.07831674814224243,
+    "cost": 0.0017659499999999999,
     "usage": {
-      "input_tokens": 46845,
-      "output_tokens": 50,
-      "total_tokens": 46895
+      "input_tokens": 46900.0,
+      "output_tokens": 48.0,
+      "total_tokens": 46948.0
     },
-    "latency": 3.035205841064453,
+    "latency": 5.791521072387695,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -226,17 +220,11 @@
       "test_id": "3.json"
     },
     "model_output": {
-      "insights": {
-        "device_usage": {
-          "mobile": 68,
-          "desktop": 32,
-          "tablet": 0.7
-        }
-      }
+      "text": "```json\n{\n  \"insights\": {\n    \"device_usage\": {\n      \"mobile\": 68,\n      \"desktop\": 32,\n      \"tablet\": 0.7\n    }\n  }\n}\n```"
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "4.json",
     "difficulty": "easy",
     "tags": [
@@ -244,14 +232,14 @@
       "METADATA_EXTRACTION",
       "ANALYTICS_EXTRACTION"
     ],
-    "score": 0.9764013528823853,
-    "cost": 0.0039925874999999994,
+    "score": 0.9751253724098206,
+    "cost": 0.004006725,
     "usage": {
-      "input_tokens": 106273,
-      "output_tokens": 49,
-      "total_tokens": 106322
+      "input_tokens": 106622.0,
+      "output_tokens": 56.0,
+      "total_tokens": 106678.0
     },
-    "latency": 13.328509092330933,
+    "latency": 16.982248783111572,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -273,14 +261,14 @@
       "test_id": "4.json"
     },
     "model_output": {
-      "post_title": "Is there a simple way to monitor Bedrock Costs?",
+      "post_title": "Is there a simple way to monitor Bedrock Costs? : r/aws",
       "author": "Bob321423",
       "subreddit": "aws",
       "post_score": "5"
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "5.json",
     "difficulty": "easy",
     "tags": [
@@ -288,14 +276,14 @@
       "METADATA_EXTRACTION",
       "ANALYTICS_EXTRACTION"
     ],
-    "score": 0.9849911093711853,
-    "cost": 0.0039952125,
+    "score": 1.0000000715255737,
+    "cost": 0.0040085625,
     "usage": {
-      "input_tokens": 106287,
-      "output_tokens": 63,
-      "total_tokens": 106350
+      "input_tokens": 106635.0,
+      "output_tokens": 65.0,
+      "total_tokens": 106700.0
     },
-    "latency": 7.555216073989868,
+    "latency": 18.024719715118408,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -318,29 +306,29 @@
       "test_id": "5.json"
     },
     "model_output": {
-      "community_name": "aws",
+      "community_name": "r/aws",
       "total_members": 316355,
       "active_members": 48,
       "created_date": "Jan 26, 2008",
-      "community_type": "public"
+      "community_type": "Public"
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "1.json",
     "difficulty": "medium",
     "tags": [
       "ANALYTICS_EXTRACTION",
       "SEMANTIC_EXTRACTION"
     ],
-    "score": 0.9820192575454711,
-    "cost": 0.0017697,
+    "score": 0.755070436000824,
+    "cost": 0.0017703374999999998,
     "usage": {
-      "input_tokens": 46904,
-      "output_tokens": 72,
-      "total_tokens": 46976
+      "input_tokens": 46957.0,
+      "output_tokens": 63.0,
+      "total_tokens": 47020.0
     },
-    "latency": 8.980632066726685,
+    "latency": 7.120393991470337,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -367,29 +355,29 @@
     "model_output": {
       "insights": {
         "top_page": {
-          "url": "/blog/tone-evaluation",
-          "pageviews": 296,
-          "percentage_of_total": 50.68,
-          "has_social_traffic": true
+          "url": "/peytoncasper.com",
+          "pageviews": 584,
+          "percentage_of_total": 100,
+          "has_social_traffic": false
         }
       }
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "2.json",
     "difficulty": "medium",
     "tags": [
       "ANALYTICS_EXTRACTION"
     ],
-    "score": 0.9762436032295227,
-    "cost": 0.001770375,
+    "score": 0.9910309076309204,
+    "cost": 0.0017693624999999998,
     "usage": {
-      "input_tokens": 46890,
-      "output_tokens": 80,
-      "total_tokens": 46970
+      "input_tokens": 46943.0,
+      "output_tokens": 60.0,
+      "total_tokens": 47003.0
     },
-    "latency": 3.251124858856201,
+    "latency": 6.189766883850098,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -418,27 +406,27 @@
           "percentage": 68,
           "dominant_browser": "iOS Safari",
           "browser_share": 48,
-          "alignment_score": 0.7058823529411764
+          "alignment_score": 0.7857
         }
       }
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "3.json",
     "difficulty": "medium",
     "tags": [
       "ANALYTICS_EXTRACTION",
       "SEMANTIC_EXTRACTION"
     ],
-    "score": 0.9311822414398193,
-    "cost": 0.0040015125,
+    "score": 0.8454606294631959,
+    "cost": 0.0040039125,
     "usage": {
-      "input_tokens": 106279,
-      "output_tokens": 107,
-      "total_tokens": 106386
+      "input_tokens": 106627.0,
+      "output_tokens": 36.0,
+      "total_tokens": 106663.0
     },
-    "latency": 11.486633062362671,
+    "latency": 11.133559942245483,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -470,25 +458,17 @@
       "test_id": "3.json"
     },
     "model_output": {
-      "total_comments": 5,
+      "total_comments": 1,
       "comment_authors": [
-        "Truelikegiroux",
-        "TechMktr",
-        "MrPebblesMeow",
-        "AdRepulsive7837",
-        "noydoc"
+        "Truelikegiroux"
       ],
       "comments_timeline": [
-        "5mo ago",
-        "5mo ago",
-        "4mo ago",
-        "4mo ago",
-        "2mo ago"
+        "5mo ago"
       ]
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "4.json",
     "difficulty": "medium",
     "tags": [
@@ -496,13 +476,13 @@
       "ANALYTICS_EXTRACTION"
     ],
     "score": 0.983130407333374,
-    "cost": 0.0039949125,
+    "cost": 0.0040079625,
     "usage": {
-      "input_tokens": 106287,
-      "output_tokens": 61,
-      "total_tokens": 106348
+      "input_tokens": 106635.0,
+      "output_tokens": 61.0,
+      "total_tokens": 106696.0
     },
-    "latency": 7.651278018951416,
+    "latency": 15.450366973876953,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -532,21 +512,21 @@
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "5.json",
     "difficulty": "medium",
     "tags": [
       "STRUCTURAL_EXTRACTION",
       "MEDIA_EXTRACTION"
     ],
-    "score": 1.0,
-    "cost": 0.0004874999999999999,
+    "score": 0.17781731486320496,
+    "cost": 0.0004870125,
     "usage": {
-      "input_tokens": 12452,
-      "output_tokens": 137,
-      "total_tokens": 12589
+      "input_tokens": 12427.0,
+      "output_tokens": 140.0,
+      "total_tokens": 12567.0
     },
-    "latency": 1.7149040699005127,
+    "latency": 3.0842039585113525,
     "test_case": {
       "input": {
         "input_file": "simpleanalytics.html"
@@ -573,20 +553,11 @@
       "test_id": "5.json"
     },
     "model_output": {
-      "logo": {
-        "viewBox": "0 0 100 100",
-        "width": "30px",
-        "height": "30px",
-        "paths": [
-          "<rect height=\"30\" width=\"10\" x=\"20\" y=\"53\"></rect>",
-          "<rect height=\"48\" width=\"10\" x=\"44\" y=\"35\"></rect>",
-          "<rect height=\"65\" width=\"10\" x=\"68\" y=\"18\"></rect>"
-        ]
-      }
+      "text": "```json\n{\n \"logo\": {\n   \"viewBox\": \"0 0 100 100\",\n   \"width\": \"30px\",\n   \"height\": \"30px\",\n   \"paths\": [\n    \"M20 538H740V998H20V538Z\",\n    \"M440 350H740V798H440V350Z\",\n    \"M680 180H740V638H680V180Z\"\n   ]\n }\n}\n```"
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "1.json",
     "difficulty": "hard",
     "tags": [
@@ -594,14 +565,14 @@
       "METADATA_EXTRACTION",
       "STRUCTURAL_EXTRACTION"
     ],
-    "score": 0.9391164660453797,
-    "cost": 0.0017701499999999998,
+    "score": 0.9583904623985291,
+    "cost": 0.0017720999999999998,
     "usage": {
-      "input_tokens": 46900,
-      "output_tokens": 76,
-      "total_tokens": 46976
+      "input_tokens": 46956.0,
+      "output_tokens": 75.0,
+      "total_tokens": 47031.0
     },
-    "latency": 5.4787678718566895,
+    "latency": 8.241250038146973,
     "test_case": {
       "expected_output": {
         "insights": {
@@ -628,29 +599,29 @@
     "model_output": {
       "insights": {
         "most_popular_page": "/blog/tone-evaluation",
-        "most_popular_referral_source": "(direct)",
-        "dominant_device_type": "Mobile",
+        "most_popular_referral_source": "news.ycombinator.com",
+        "dominant_device_type": "mobile",
         "dominant_browser": "iOS Safari",
         "dominant_country": "United States"
       }
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "2.json",
     "difficulty": "hard",
     "tags": [
       "STRUCTURAL_EXTRACTION",
       "METADATA_EXTRACTION"
     ],
-    "score": 0.8477411815098354,
-    "cost": 0.0040906125,
+    "score": 0.24072335958480834,
+    "cost": 0.004149375,
     "usage": {
-      "input_tokens": 106311,
-      "output_tokens": 693,
-      "total_tokens": 107004
+      "input_tokens": 106658.0,
+      "output_tokens": 998.0,
+      "total_tokens": 107656.0
     },
-    "latency": 13.459510087966919,
+    "latency": 178.5134060382843,
     "test_case": {
       "input": {
         "input_file": "reddit.html"
@@ -725,106 +696,24 @@
       "test_id": "2.json"
     },
     "model_output": {
-      "resources": {
-        "main_links": [
-          {
-            "title": "Home",
-            "url": "/"
-          },
-          {
-            "title": "Advertise on Reddit",
-            "url": "https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&utm_name=nav_cta"
-          },
-          {
-            "title": "Create post",
-            "url": "/r/aws/submit"
-          },
-          {
-            "title": "View Profile",
-            "url": "/user/peytoncasper/"
-          },
-          {
-            "title": "Edit Avatar",
-            "url": "https://reddit.com/avatar"
-          },
-          {
-            "title": "Achievements",
-            "url": "/user/peytoncasper/achievements"
-          },
-          {
-            "title": "Contributor Program",
-            "url": "/contributor-program/profile"
-          },
-          {
-            "title": "Settings",
-            "url": "/settings/"
-          },
-          {
-            "title": "Premium",
-            "url": "/premium"
-          }
-        ],
-        "policies": [
-          {
-            "title": "Content Policy",
-            "url": "https://www.redditinc.com/policies/content-policy"
-          },
-          {
-            "title": "Privacy Policy",
-            "url": "https://www.reddit.com/policies/privacy-policy"
-          },
-          {
-            "title": "User Agreement",
-            "url": "https://www.redditinc.com/policies/user-agreement"
-          }
-        ],
-        "sidebar_resources": [
-          "https://aws.amazon.com/blogs/aws/",
-          "http://status.aws.amazon.com/",
-          "http://aws.amazon.com/documentation/",
-          "https://www.youtube.com/user/AmazonWebServices/",
-          "https://github.com/aws-samples",
-          "https://github.com/awslabs",
-          "https://docs.aws.amazon.com/general/latest/gr/Welcome.html",
-          "http://www.highscalability.com/",
-          "https://reinventvideos.com/",
-          "https://workshops.aws/",
-          "https://www.awsgeek.com/",
-          "https://awsstash.com/",
-          "https://aws.amazon.com/architecture/",
-          "https://repost.aws/",
-          "/r/AWScertifications",
-          "/r/virtualization",
-          "/r/devops",
-          "/r/kubernetes",
-          "/r/terraform",
-          "/r/cloudcomputing",
-          "/r/bigdata",
-          "/r/vmware",
-          "/r/networking",
-          "/r/sysadmin",
-          "/r/netsec",
-          "/r/aws_cdk",
-          "/r/AWSCloudFormation"
-        ]
-      }
+      "text": "{\n \"resources\": {\n   \"main_links\": [\n    { \"title\": \"Home\", \"url\": \"/\" },\n    { \"title\": \"About Reddit\", \"url\": \"https://www.redditinc.com\" },\n    { \"title\": \"Careers\", \"url\": \"https://www.redditinc.com/careers\" },\n    { \"title\": \"Press\", \"url\": \"https://www.redditinc.com/press\" },\n    { \"title\": \"Advertise\", \"url\": \"https://accounts.reddit.com/adsregister?utm_source=web3x_consumer&amp;utm_name=nav_cta\" },\n    { \"title\": \"Terms of Service\", \"url\": \"https://www.redditinc.com/policies/user-agreement\" },\n    { \"title\": \"Privacy Policy\", \"url\": \"https://www.reddit.com/policies/privacy-policy\" },\n    { \"title\": \"Content Policy\", \"url\": \"https://www.redditinc.com/policies/content-policy\" }\n   ],\n   \"policies\": [\n    { \"title\": \"User Agreement\", \"url\": \"https://www.redditinc.com/policies/user-agreement\" },\n    { \"title\": \"Privacy Policy\", \"url\": \"https://www.reddit.com/policies/privacy-policy\" },\n    { \"title\": \"Content Policy\", \"url\": \"https://www.redditinc.com/policies/content-policy\" }\n   ],\n   \"sidebar_resources\": [\n    \"Resources:\",\n    \"Amazon Web Services blog: https://aws.amazon.com/blogs/aws/\",\n    \"AWS status page: http://status.aws.amazon.com/\",\n    \"AWS documentation: http://aws.amazon.com/documentation/\",\n    \"AWS YouTube channel: https://www.youtube.com/user/AmazonWebServices/\",\n    \"GitHub: https://github.com/aws-samples\",\n    \"AWS Labs on GitHub: https://github.com/awslabs\",\n    \"AWS General Reference: https://docs.aws.amazon.com/general/latest/gr/Welcome.html\",\n    \"High Scalability: http://www.highscalability.com/\",\n    \"re:Invent Videos: https://reinventvideos.com/\",\n    \"Workshops: https://www.awsgeek.com/\",\n    \"AWS Stash: https://awsstash.com/\",\n    \"AWS Architecture Center: https://aws.amazon.com/architecture/\",\n    \"AWS re:Post: https://repost.aws/\",\n    \"Other subreddits you may like:\",\n    \"/r/AWScertifications\",\n    \"/r/virtualization\",\n    \"/r/devops\",\n    \"/r/kubernetes\",\n    \"/r/terraform\",\n    \"/r/cloudcomputing\",\n    \"/r/bigdata\",\n    \"/r/vmware\",\n    \"/r/networking\",\n    \"/r/sysadmin\",\n    \"/r/netsec\",\n    \"/r/aws_cdk\",\n    \"/r/AWSCloudFormation\",\n    \"Side Project: https://www.reddit.com/r/SideProject\",\n    \"Upwork: https://www.reddit.com/r/Upwork\",\n    \"WebDev: https://www.reddit.com/r/webdev\",\n    \"Machine Learning: https://www.reddit.com/r/MachineLearning\",\n    \"Data Science: https://www.reddit.com/r/datascience\",\n    \"Data Engineering: https://www.reddit.com/r/dataengineering\",\n    \"Etsy: https://www.reddit.com/r/Etsy\",\n    \"Formula 1: https://www.reddit.com/r/formula1\",\n    \"OpenAI: https://www.reddit.com/r/OpenAI\",\n    \"Open Source eAI: https://www.reddit.com/r/OpenSourceeAI\",\n    \"Remarkable Tablet: https://www.reddit.com/r/RemarkableTablet\",\n    \"Resin Printing: https://www.reddit.com/r/resinprinting\",\n    \"News: https://www.reddit.com/r/news\",\n    \"Artificial Intelligence: https://www.reddit.com/r/ArtificialInteligence\",\n    \"Artificial: https://www.reddit.com/r/artificial\",\n    \"Data Science: https://www.reddit.com/r/datascience\",\n    \"Data Engineering: https://www.reddit.com/r/dataengineering\",\n    \"Manufacturing: https://www.reddit.com/r/manufacturing\",\n    \"Manufacturing: https://www.reddit.com/r/manufacturing\","
     }
   },
   {
-    "model": "gemini-2.0-flash-exp",
+    "model": "command-r7b-12-2024",
     "test_id": "3.json",
     "difficulty": "hard",
     "tags": [
       "MEDIA_EXTRACTION"
     ],
     "score": 1.0,
-    "cost": 0.00046676249999999997,
+    "cost": 0.0004660125,
     "usage": {
-      "input_tokens": 12411,
-      "output_tokens": 9,
-      "total_tokens": 12420
+      "input_tokens": 12391.0,
+      "output_tokens": 9.0,
+      "total_tokens": 12400.0
     },
-    "latency": 0.795543909072876,
+    "latency": 1.0933423042297363,
     "test_case": {
       "input": {
         "input_file": "simpleanalytics.html"

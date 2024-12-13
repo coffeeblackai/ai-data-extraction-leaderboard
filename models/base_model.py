@@ -5,8 +5,6 @@ import os
 from .model_config import ModelConfig
 import time
 from functools import wraps
-import asyncio
-from concurrent.futures import ThreadPoolExecutor
 import logging
 
 # Add logging configuration after imports
@@ -22,7 +20,7 @@ class ModelResponse:
     error: Optional[str] = None
     latency: Optional[float] = None
 
-def with_retry_and_rate_limit(max_retries=3, timeout=30):
+def with_retry_and_rate_limit(max_retries=3, timeout=90):
     """Decorator to add timeout, retry logic, and rate limiting to model execution"""
     def decorator(func):
         @wraps(func)
@@ -69,30 +67,33 @@ def with_retry_and_rate_limit(max_retries=3, timeout=30):
                     self.requests_made_in_current_minute = 0
                     self.last_request_time = time.time()
 
-            # Retry logic
+            # Retry logic - simplified without threading
             for attempt in range(max_retries):
                 try:
                     logger.info(f"Executing request (attempt {attempt + 1}/{max_retries})")
-                    with ThreadPoolExecutor(max_workers=1) as executor:
-                        future = executor.submit(func, self, *args, **kwargs)
-                        result = future.result(timeout=timeout)
-                        # Update token and request usage with actual values from response
-                        if hasattr(self, 'rate_limit_config') and hasattr(result, 'usage'):
-                            actual_tokens = result.usage.get('total_tokens', 0)
-                            self.tokens_used_in_current_minute += actual_tokens
-                            self.requests_made_in_current_minute += 1
-                            logger.debug(f"Updated token and request usage: {self.tokens_used_in_current_minute}/{tokens_per_minute} tokens, {self.requests_made_in_current_minute}/{requests_per_minute} requests")
+                    start_time = time.time()
+                    result = func(self, *args, **kwargs)
+                    
+                    # Check for timeout
+                    print(f"Request exceeded timeout of {timeout} seconds")
+                    
+                    # Update token and request usage with actual values from response
+                    if hasattr(self, 'rate_limit_config') and hasattr(result, 'usage'):
+                        actual_tokens = result.usage.get('total_tokens', 0)
+                        self.tokens_used_in_current_minute += actual_tokens
+                        self.requests_made_in_current_minute += 1
+                        logger.debug(f"Updated token and request usage: {self.tokens_used_in_current_minute} tokens, {self.requests_made_in_current_minute} requests")
+                    
+                    logger.info(f"Request successful on attempt {attempt + 1}")
+                    # Ensure we return a proper ModelResponse
+                    if not isinstance(result, ModelResponse):
+                        result = ModelResponse(
+                            output=result,
+                            usage={"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+                        )
+                    return result
                         
-                        logger.info(f"Request successful on attempt {attempt + 1}")
-                        # Ensure we return a proper ModelResponse
-                        if not isinstance(result, ModelResponse):
-                            result = ModelResponse(
-                                output=result,
-                                usage={"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
-                            )
-                        return result
-                        
-                except (TimeoutError, asyncio.TimeoutError) as e:
+                except TimeoutError as e:
                     last_error = f"Timeout after {timeout} seconds on attempt {attempt + 1}/{max_retries}"
                     logger.error(last_error)
                     if attempt < max_retries - 1:

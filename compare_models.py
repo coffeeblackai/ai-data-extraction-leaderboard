@@ -400,7 +400,8 @@ def compare_models(test_suite: str = 'all', model: str = 'all', output_mode: str
         'llama-3.1-8b-instant': GroqModel,
         'command-nightly': CohereModel,
         'command-r': CohereModel,
-        'command-r-plus': CohereModel
+        'command-r-plus': CohereModel,
+        "command-r7b-12-2024": CohereModel
     }
     models = {}
     if model == 'all':

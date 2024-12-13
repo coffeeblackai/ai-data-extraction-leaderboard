@@ -24,7 +24,7 @@ class CohereModel(BaseModel):
         try:
             # Combine system prompt and user prompt
             full_prompt = f"{system_prompt}\n\n{formatted_prompt}"
-            
+            print(f"Making Cohere API request with model {self.model_name}...")
             response = self.client.chat(
                 model=self.model_name,
                 message=full_prompt,
@@ -33,44 +33,22 @@ class CohereModel(BaseModel):
                 max_tokens=1000,
                 prompt_truncation='AUTO'
             )
+            print("Received response from Cohere API")
+            
             # Get message output from response
+            print("Extracting response text...")
             response_text = response.text
             
-            # Try multiple approaches to parse JSON from response text
-            output = None
-            
-            # First try direct JSON parsing
+            # If response_text is already valid JSON, use it directly
+            print("Attempting to parse response as JSON...")
             try:
                 output = json.loads(response_text)
+                print("Successfully parsed response as JSON")
             except json.JSONDecodeError:
-                # Try different JSON extraction methods
-                json_patterns = [
-                    r'```json\n(.*?)\n```',  # JSON in code blocks with json tag
-                    r'```(.*?)```',          # JSON in any code blocks
-                    r'\{(?:[^{}]|(?R))*\}',  # Nested JSON objects
-                    r'\{.*\}'                # Simple JSON objects
-                ]
-                
-                for pattern in json_patterns:
-                    try:
-                        matches = re.findall(pattern, response_text, re.DOTALL)
-                        if matches:
-                            # Try each match until we find valid JSON
-                            for match in matches:
-                                try:
-                                    output = json.loads(match.strip())
-                                    break
-                                except json.JSONDecodeError:
-                                    continue
-                            if output:
-                                break
-                    except Exception:
-                        continue
-                
-                if not output:
-                    print(output)
-                    raise ValueError("No valid JSON found in response")
-
+                # If not JSON, return the raw text in a dictionary
+                print("Response was not valid JSON, wrapping in text field")
+                output = {"text": response_text}
+            
             # Get usage data from response
             billed_units = response.meta.billed_units
             usage = {
@@ -83,6 +61,7 @@ class CohereModel(BaseModel):
                 output=output,
                 usage=usage
             )
+            
         except Exception as e:
             print(f"Cohere API error: {str(e)}")
             return ModelResponse(
