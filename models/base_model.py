@@ -167,7 +167,13 @@ class BaseModel:
             print(f"Error loading HTML file {input_file}: {str(e)}")
             raise
 
-    @with_retry_and_rate_limit()  # Replace @with_retry with new combined decorator
+    def reset_metrics(self):
+        """Reset latency and request count metrics"""
+        self.logger.info(f"Resetting metrics - Previous total latency: {self.total_latency:.3f}s, requests: {self.request_count}")
+        self.total_latency = 0
+        self.request_count = 0
+
+    @with_retry_and_rate_limit()
     def get_response(self, prompt_template: str, system_prompt: str, input_file: str = None) -> ModelResponse:
         """Get response from the model"""
         start_time = time.time()
@@ -176,12 +182,11 @@ class BaseModel:
             formatted_prompt = prompt_template + "\n\n=== HTML Content ===\n" + html_content
 
             response = self._execute_request(formatted_prompt, system_prompt)
-            print(response)
-            # Calculate latency
-            end_time = time.time()
-            latency = end_time - start_time
             
-            # Update aggregate metrics
+            # Calculate latency
+            latency = time.time() - start_time
+            
+            # Only update metrics here, not in _execute_request
             self.total_latency += latency
             self.request_count += 1
             
@@ -193,11 +198,9 @@ class BaseModel:
                 latency=latency
             )
         except Exception as e:
-            # Calculate latency even for errors
-            end_time = time.time()
-            latency = end_time - start_time
+            latency = time.time() - start_time
             
-            # Update aggregate metrics
+            # Only update metrics here, not in _execute_request
             self.total_latency += latency
             self.request_count += 1
             
@@ -206,10 +209,10 @@ class BaseModel:
                 output={},
                 usage={"input_tokens": 0, "output_tokens": 0},
                 error=str(e),
-                latency=latency  # Include latency in error response
+                latency=latency
             )
-    
-    @with_retry_and_rate_limit()  # Replace @with_retry with new combined decorator
+
+    @with_retry_and_rate_limit()
     def _execute_request(self, formatted_prompt: str, system_prompt: str) -> ModelResponse:
         """Execute request with timing"""
         start_time = time.time()
@@ -217,12 +220,8 @@ class BaseModel:
             # Implementation in child classes will override this
             response = self._make_api_call(formatted_prompt, system_prompt)
             
-            # Calculate latency
+            # Calculate latency but don't update metrics here to avoid double counting
             latency = time.time() - start_time
-            
-            # Update aggregate metrics
-            self.total_latency += latency
-            self.request_count += 1
             
             # Make sure latency is included in response
             if isinstance(response, ModelResponse):
@@ -236,12 +235,7 @@ class BaseModel:
                 )
             
         except Exception as e:
-            # Calculate latency even for errors
             latency = time.time() - start_time
-            
-            # Update aggregate metrics
-            self.total_latency += latency
-            self.request_count += 1
             
             return ModelResponse(
                 output={},
