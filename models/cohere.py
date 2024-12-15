@@ -23,15 +23,15 @@ class CohereModel(BaseModel):
         """Execute request using the Cohere API"""
         try:
             # Combine system prompt and user prompt
-            full_prompt = f"{system_prompt}\n\n{formatted_prompt}"
             print(f"Making Cohere API request with model {self.model_name}...")
             response = self.client.chat(
                 model=self.model_name,
-                message=full_prompt,
+                preamble=system_prompt,
+                message=formatted_prompt,
                 temperature=0.5,
                 chat_history=[],
                 max_tokens=1000,
-                prompt_truncation='AUTO'
+                prompt_truncation='AUTO',
             )
             print("Received response from Cohere API")
             
